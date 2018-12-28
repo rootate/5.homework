@@ -111,29 +111,30 @@ int main(int argc, char const *argv[])
 		}
 		line++;
 	}
-	
+
 	fclose(filepointer);
 
 	//sıralama adımları
 	char choose;
 
-	printf("PLEASE ENTER WHAT DO YOU WANT TO SORT BY \nPRESS 'N' OR 'n' FOR NAME : \nPRESS 'S' OR 's' FOR SURNAME : \nPRESS 'M' OR 'm' FOR EMAIL : \nPRESS 'I' OR 'i' FOR  : \nQUIT : 'q OR 'Q\n");
+	printf("PLEASE ENTER WHAT DO YOU WANT TO SORT BY \nPRESS 'N' OR 'n' FOR NAME : \nPRESS 'S' OR 's' FOR SURNAME : \nPRESS 'E' OR 'e' FOR EMAIL : \nPRESS 'I' OR 'i' FOR NUMBER : \nQUIT : 'q OR 'Q\n");
 	choose = getchar();
 
+	
 	switch (choose)
 	{
 	case 'n':
 	case 'N':
-		for (int i = 0; i < line - 2; ++i)
+		for (int i = 0; i < line - 3; ++i)
 		{
-			for (int j = 0; j < line - 2; ++j)
+			for (int j = 0; j < line - 3; ++j)
 			{
-				if (strcmp(readed.firstname[i], readed.firstname[i + 1]) > 0)
+				if (strcmp(readed.firstname[j], readed.firstname[j + 1]) > 0)
 				{
-					myswap(readed.firstname[i], readed.firstname[i + 1]);
-					myswap(readed.lastname[i], readed.lastname[i + 1]);
-					myswap(readed.email[i], readed.email[i + 1]);
-					myswap(readed.number[i], readed.number[i + 1]);
+					myswap(readed.firstname[j], readed.firstname[j + 1]);
+					myswap(readed.lastname[j], readed.lastname[j + 1]);
+					myswap(readed.email[j], readed.email[j + 1]);
+					myswap(readed.number[j], readed.number[j + 1]);
 				}
 			}
 		}
@@ -141,48 +142,48 @@ int main(int argc, char const *argv[])
 		break;
 	case 'S':
 	case 's':
-		for (int i = 0; i < line - 2; ++i)
+		for (int i = 0; i < line - 3; ++i)
 		{
-			for (int j = 0; j < line - 2; ++j)
+			for (int j = 0; j < line - 3; ++j)
 			{
-				if (strcmp(readed.lastname[i], readed.lastname[i + 1]) > 0)
+				if (strcmp(readed.lastname[j], readed.lastname[j + 1]) > 0)
 				{
-					myswap(readed.firstname[i], readed.firstname[i + 1]);
-					myswap(readed.lastname[i], readed.lastname[i + 1]);
-					myswap(readed.email[i], readed.email[i + 1]);
-					myswap(readed.number[i], readed.number[i + 1]);
+					myswap(readed.firstname[j], readed.firstname[j + 1]);
+					myswap(readed.lastname[j], readed.lastname[j + 1]);
+					myswap(readed.email[j], readed.email[j + 1]);
+					myswap(readed.number[j], readed.number[j + 1]);
 				}
 			}
 		}
 		break;
-	case 'M':
-	case 'm':
-		for (int i = 0; i < line - 2; ++i)
+	case 'E':
+	case 'e':
+		for (int i = 0; i < line - 3; ++i)
 		{
-			for (int j = 0; j < line - 2; ++j)
+			for (int j = 0; j < line - 3; ++j)
 			{
-				if (strcmp(readed.email[i], readed.email[i + 1]) > 0)
+				if (strcmp(readed.email[j], readed.email[j + 1]) > 0)
 				{
-					myswap(readed.firstname[i], readed.firstname[i + 1]);
-					myswap(readed.lastname[i], readed.lastname[i + 1]);
-					myswap(readed.email[i], readed.email[i + 1]);
-					myswap(readed.number[i], readed.number[i + 1]);
+					myswap(readed.firstname[j], readed.firstname[j + 1]);
+					myswap(readed.lastname[j], readed.lastname[j + 1]);
+					myswap(readed.email[j], readed.email[j + 1]);
+					myswap(readed.number[j], readed.number[j + 1]);
 				}
 			}
 		}
 		break;
 	case 'I':
 	case 'i':
-		for (int i = 0; i < line - 2; ++i)
+		for (int i = 0; i < line - 3; ++i)
 		{
-			for (int j = 0; j < line - 2; ++j)
+			for (int j = 0; j < line - 3; ++j)
 			{
-				if (strcmp(readed.number[i], readed.number[i + 1]) > 0)
+				if (strcmp(readed.number[j], readed.number[j + 1]) > 0)
 				{
-					myswap(readed.firstname[i], readed.firstname[i + 1]);
-					myswap(readed.lastname[i], readed.lastname[i + 1]);
-					myswap(readed.email[i], readed.email[i + 1]);
-					myswap(readed.number[i], readed.number[i + 1]);
+					myswap(readed.firstname[j], readed.firstname[j + 1]);
+					myswap(readed.lastname[j], readed.lastname[j + 1]);
+					myswap(readed.email[j], readed.email[j + 1]);
+					myswap(readed.number[j], readed.number[j + 1]);
 				}
 			}
 		}
@@ -194,6 +195,8 @@ int main(int argc, char const *argv[])
 		printf("WARNING!!\nPLEASE WRITE CORRECTlY : ");
 		exit(0);
 	}
+
+
 	// dosyaya yazdırma işlemleri
 	filepointer = fopen("orderedFile.txt", "w");
 	if ((filepointer = fopen("orderedFile.txt", "w")) == NULL)
@@ -203,8 +206,7 @@ int main(int argc, char const *argv[])
 	}
 
 	printf("LIST INSERTED!\n");
-	
-	//yapılan seçime göre dosyaya yazdırma işlemleri
+
 	if (choose == 'N' || choose == 'n')
 	{
 		fprintf(filepointer, "%-20s%-20s%-20s%-40s\n", "NAME", "SURNAME", "ID", "EMAIL");
@@ -245,7 +247,7 @@ int main(int argc, char const *argv[])
 		}
 	}
 
-	if (choose == 'M' || choose == 'm')
+	if (choose == 'E' || choose == 'e')
 	{
 		fprintf(filepointer, "%-40s%-20s%-20s%-20s\n", "EMAIL", "NAME", "SURNAME", "ID");
 		for (int i = 0; i < line - 1; ++i)
@@ -270,11 +272,11 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
-//stringleri sıralarken kullandığımız değşiştirme fonksiyonu
+
 void myswap(char *p1, char *p2)
 {
 	char temp[150];
 	strcpy(temp, p1);
 	strcpy(p1, p2);
 	strcpy(p2, temp);
-}
+} 
