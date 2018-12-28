@@ -125,9 +125,9 @@ int main(int argc, char const *argv[])
 	{
 	case 'n':
 	case 'N':
-		for (int i = 0; i < line - 3; ++i)
+		for (int i = 0; i < line - 2; ++i)
 		{
-			for (int j = 0; j < line - 3; ++j)
+			for (int j = 0; j < line - 2; ++j)
 			{
 				if (strcmp(readed.firstname[j], readed.firstname[j + 1]) > 0)
 				{
@@ -142,9 +142,9 @@ int main(int argc, char const *argv[])
 		break;
 	case 'S':
 	case 's':
-		for (int i = 0; i < line - 3; ++i)
+		for (int i = 0; i < line - 2; ++i)
 		{
-			for (int j = 0; j < line - 3; ++j)
+			for (int j = 0; j < line - 2; ++j)
 			{
 				if (strcmp(readed.lastname[j], readed.lastname[j + 1]) > 0)
 				{
@@ -158,9 +158,9 @@ int main(int argc, char const *argv[])
 		break;
 	case 'E':
 	case 'e':
-		for (int i = 0; i < line - 3; ++i)
+		for (int i = 0; i < line - 2; ++i)
 		{
-			for (int j = 0; j < line - 3; ++j)
+			for (int j = 0; j < line - 2; ++j)
 			{
 				if (strcmp(readed.email[j], readed.email[j + 1]) > 0)
 				{
@@ -174,9 +174,9 @@ int main(int argc, char const *argv[])
 		break;
 	case 'I':
 	case 'i':
-		for (int i = 0; i < line - 3; ++i)
+		for (int i = 0; i < line - 2; ++i)
 		{
-			for (int j = 0; j < line - 3; ++j)
+			for (int j = 0; j < line - 2; ++j)
 			{
 				if (strcmp(readed.number[j], readed.number[j + 1]) > 0)
 				{
